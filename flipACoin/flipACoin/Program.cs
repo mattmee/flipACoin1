@@ -15,13 +15,15 @@ namespace flipACoin
         static void Main(string[] args)
         {
 
-
-            for (int i = 0; i < 10000000; i++)
+            /*
+            for (int i = 0; i < 100; i++)
             {
                 FlipACoin();
             }
             Console.WriteLine("Heads: " + headsCounter);
             Console.WriteLine("Tails: " + tailsCounter);
+            */
+            Console.WriteLine(FlipForHeads());
             Console.ReadKey();
         }
         public static string FlipACoin()
@@ -36,6 +38,13 @@ namespace flipACoin
                 tailsCounter++;
                 return "tails";
             }
+        }
+        public static int FlipForHeads()
+        {
+            int flipCount = 0;
+            while (FlipACoin() != "heads")
+                flipCount++;
+            return flipCount;
         }
     }
 }
